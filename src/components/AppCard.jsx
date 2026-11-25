@@ -3,10 +3,14 @@ import AppLogo from './AppLogo';
 
 export default function AppCard({ project, onSelect }) {
   return (
-    <article className="flex h-full flex-col justify-between rounded-2xl border border-stone-200 bg-white p-5 transition-all hover:border-[#235334]/50 hover:shadow-md">
+    <article className="flex h-full min-w-0 flex-col justify-between rounded-2xl border border-stone-200 bg-white p-4 transition-all hover:border-[#235334]/50 hover:shadow-md sm:p-5">
       <div>
-        <div className="flex items-start gap-4">
-          <AppLogo src={project.logoUrl} appName={project.appName} sizeClass="h-16 w-16" />
+        <div className="flex items-start gap-3.5 sm:gap-4">
+          <AppLogo
+            src={project.logoUrl}
+            appName={project.appName}
+            sizeClass="h-14 w-14 sm:h-16 sm:w-16"
+          />
 
           <div className="min-w-0 flex-1">
             <span className="inline-flex items-center rounded-md border border-[#235334]/20 bg-[#EEF5F0] px-2 py-0.5 text-xs font-bold text-[#1A3F27]">

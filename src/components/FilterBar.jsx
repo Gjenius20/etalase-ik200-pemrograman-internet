@@ -7,8 +7,8 @@ export default function FilterBar({
   totalCount,
 }) {
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-4 shadow-xs sm:flex-row sm:items-center sm:justify-between sm:p-5">
-      <div className="relative flex-1 sm:max-w-lg">
+    <div className="flex flex-col gap-3 rounded-2xl border border-stone-200 bg-white p-3.5 shadow-xs sm:flex-row sm:items-center sm:justify-between sm:p-5">
+      <div className="relative w-full flex-1 sm:max-w-lg">
         <label htmlFor="search-projects" className="sr-only">
           Cari nama aplikasi, topik pembelajaran, atau nama kelompok
         </label>

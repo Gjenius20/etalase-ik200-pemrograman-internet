@@ -1,32 +1,32 @@
 export default function Footer() {
   return (
-    <footer id="info-portal" className="mt-16 border-t-4 border-[#C5A24D] bg-[#111920] text-white">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-8 md:flex-row md:items-center">
-          <div className="space-y-4">
-            <div className="inline-flex max-w-full flex-wrap items-center gap-x-4 gap-y-2.5 rounded-2xl bg-white px-4 py-3">
+    <footer id="info-portal" className="mt-10 border-t-4 border-[#C5A24D] bg-[#111920] text-white sm:mt-16">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+        <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-7 sm:pb-8 md:flex-row md:items-center">
+          <div className="min-w-0 space-y-4">
+            <div className="inline-flex max-w-full flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl bg-white px-3.5 py-2.5 sm:gap-x-4 sm:gap-y-2.5 sm:px-4 sm:py-3">
               <img
                 src="/images/UPI-Logo-FPMIPA.png"
                 alt="Logo FPMIPA UPI"
                 height={32}
                 loading="lazy"
-                className="h-6 w-auto max-w-[165px] object-contain sm:h-7"
+                className="h-5 w-auto max-w-[135px] object-contain sm:h-7 sm:max-w-[165px]"
               />
               <img
                 src="/images/UPI-Logo-CSE.png"
                 alt="Logo Pendidikan Ilmu Komputer UPI"
                 height={32}
                 loading="lazy"
-                className="h-6 w-auto max-w-[105px] object-contain sm:h-7"
+                className="h-5 w-auto max-w-[85px] object-contain sm:h-7 sm:max-w-[105px]"
               />
               <img
                 src="/images/Logo-Tersier-Diktisaintek-Berdampak-Bulat.png"
                 alt="Logo Diktisaintek Berdampak"
                 height={36}
                 loading="lazy"
-                className="h-8 w-8 object-contain sm:h-9 sm:w-9"
+                className="h-7 w-7 object-contain sm:h-9 sm:w-9"
               />
-              <span className="h-8 w-8 shrink-0 overflow-hidden rounded-full border border-[#C5A24D] bg-[#111920] sm:h-9 sm:w-9">
+              <span className="h-7 w-7 shrink-0 overflow-hidden rounded-full border border-[#C5A24D] bg-[#111920] sm:h-9 sm:w-9">
                 <img
                   src="/images/Logo_Kelas.jpg"
                   alt="Logo Kelas CTRL-B"

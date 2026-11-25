@@ -45,12 +45,12 @@ export default function App() {
         <section
           id="katalog"
           aria-labelledby="katalog-heading"
-          className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
+          className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
         >
-          <div className="mb-6">
+          <div className="mb-5 sm:mb-6">
             <h2
               id="katalog-heading"
-              className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl"
+              className="text-xl font-extrabold tracking-tight text-[#111920] sm:text-3xl"
             >
               Etalase Aplikasi Pembelajaran
             </h2>
@@ -67,7 +67,7 @@ export default function App() {
           />
 
           {filteredProjects.length > 0 ? (
-            <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
               {filteredProjects.map((project) => (
                 <AppCard
                   key={project.id}

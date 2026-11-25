@@ -102,12 +102,12 @@ export default function ProjectDetailModal({ project, onClose }) {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Sticky Modal Header */}
-          <div className="flex items-start justify-between gap-4 border-b border-slate-200 bg-white px-5 py-4 sm:px-7">
-            <div className="flex min-w-0 items-center gap-3.5">
+          <div className="flex items-start justify-between gap-3 border-b border-slate-200 bg-white px-4 py-3.5 sm:gap-4 sm:px-7 sm:py-4">
+            <div className="flex min-w-0 items-center gap-3 sm:gap-3.5">
               <AppLogo
                 src={project.logoUrl}
                 appName={project.appName}
-                sizeClass="h-14 w-14 sm:h-16 sm:w-16"
+                sizeClass="h-12 w-12 sm:h-16 sm:w-16"
               />
               <div className="min-w-0">
                 <span className="text-xs font-bold text-slate-600">
@@ -115,7 +115,7 @@ export default function ProjectDetailModal({ project, onClose }) {
                 </span>
                 <h2
                   id="modal-app-title"
-                  className="mt-0.5 truncate text-xl font-extrabold text-slate-900 sm:text-2xl"
+                  className="mt-0.5 truncate text-lg font-extrabold text-slate-900 sm:text-2xl"
                 >
                   {project.appName}
                 </h2>
@@ -133,22 +133,22 @@ export default function ProjectDetailModal({ project, onClose }) {
           </div>
 
           {/* Scrollable Body */}
-          <div className="flex-1 space-y-8 overflow-y-auto px-5 py-6 sm:px-7">
+          <div className="flex-1 space-y-6 overflow-y-auto px-4 py-5 sm:space-y-8 sm:px-7 sm:py-6">
             {/* 1. Identitas, Anggota & CTA */}
             <section aria-labelledby="section-identitas">
               <h3 id="section-identitas" className="sr-only">
                 Identitas Proyek dan Tautan Utama
               </h3>
-              <p className="text-base leading-relaxed text-slate-700">
+              <p className="text-sm leading-relaxed text-slate-700 sm:text-base">
                 {project.shortDescription}
               </p>
 
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
                 <a
                   href={project.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-[#235334] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1a3f27] active:bg-[#13301d]"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl bg-[#235334] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1a3f27] active:bg-[#13301d] sm:w-auto"
                 >
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   Buka Website Aktif
@@ -157,7 +157,7 @@ export default function ProjectDetailModal({ project, onClose }) {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-800 transition-colors hover:border-slate-400 hover:bg-slate-100"
+                  className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-bold text-slate-800 transition-colors hover:border-slate-400 hover:bg-slate-100 sm:w-auto"
                 >
                   <Code2 className="h-4 w-4" aria-hidden="true" />
                   Source Code GitHub
