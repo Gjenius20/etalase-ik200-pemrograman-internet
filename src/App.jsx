@@ -10,35 +10,18 @@ import Footer from './components/Footer';
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedLevel, setSelectedLevel] = useState('Semua');
   const [selectedProject, setSelectedProject] = useState(null);
-
-  const levelCounts = useMemo(() => {
-    const counts = { Semua: projectsData.length, SD: 0, SMP: 0, SMA: 0, SMK: 0 };
-    projectsData.forEach((item) => {
-      if (counts[item.level] !== undefined) {
-        counts[item.level] += 1;
-      }
-    });
-    return counts;
-  }, []);
 
   const filteredProjects = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
+    if (!query) return projectsData;
 
     return projectsData.filter((project) => {
-      const matchesLevel =
-        selectedLevel === 'Semua' || project.level === selectedLevel;
-      if (!matchesLevel) return false;
-
-      if (!query) return true;
-
       const searchableText = [
         project.appName,
         project.groupName,
         project.shortDescription,
         project.fullDescription,
-        project.level,
       ]
         .filter(Boolean)
         .join(' ')
@@ -46,11 +29,10 @@ export default function App() {
 
       return searchableText.includes(query);
     });
-  }, [searchQuery, selectedLevel]);
+  }, [searchQuery]);
 
-  const handleResetFilters = () => {
+  const handleResetSearch = () => {
     setSearchQuery('');
-    setSelectedLevel('Semua');
   };
 
   return (
@@ -65,29 +47,23 @@ export default function App() {
           aria-labelledby="katalog-heading"
           className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8"
         >
-          <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <h2
-                id="katalog-heading"
-                className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl"
-              >
-                Etalase Aplikasi Pembelajaran
-              </h2>
-              <p className="mt-1 text-sm text-slate-600 sm:text-base">
-                Pilih kartu aplikasi untuk melihat detail, demo video, screenshot, dan dokumen proyek.
-              </p>
-            </div>
-            <p className="text-sm font-semibold text-slate-600">
-              Menampilkan {filteredProjects.length} dari {projectsData.length} proyek
+          <div className="mb-6">
+            <h2
+              id="katalog-heading"
+              className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl"
+            >
+              Etalase Aplikasi Pembelajaran
+            </h2>
+            <p className="mt-1 text-sm text-slate-600 sm:text-base">
+              Pilih kartu aplikasi untuk melihat detail, demo video, screenshot, dan dokumen proyek.
             </p>
           </div>
 
           <FilterBar
             searchQuery={searchQuery}
             onSearchChange={setSearchQuery}
-            selectedLevel={selectedLevel}
-            onLevelChange={setSelectedLevel}
-            levelCounts={levelCounts}
+            filteredCount={filteredProjects.length}
+            totalCount={projectsData.length}
           />
 
           {filteredProjects.length > 0 ? (
@@ -107,15 +83,15 @@ export default function App() {
                 Tidak ada proyek yang cocok
               </h3>
               <p className="mt-1 max-w-md text-sm text-slate-600">
-                Pencarian &ldquo;{searchQuery}&rdquo; pada jenjang {selectedLevel} tidak menemukan aplikasi. Coba ubah kata kunci atau reset filter.
+                Pencarian &ldquo;{searchQuery}&rdquo; tidak menemukan aplikasi. Coba ubah kata kunci atau reset pencarian.
               </p>
               <button
                 type="button"
-                onClick={handleResetFilters}
+                onClick={handleResetSearch}
                 className="mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-[#01875F] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#016e4d]"
               >
                 <RotateCcw className="h-4 w-4" aria-hidden="true" />
-                Reset Pencarian &amp; Filter
+                Reset Pencarian
               </button>
             </div>
           )}

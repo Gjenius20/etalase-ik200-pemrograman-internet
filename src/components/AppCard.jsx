@@ -1,17 +1,7 @@
 import { ExternalLink, Info } from 'lucide-react';
 import AppLogo from './AppLogo';
 
-const LEVEL_BADGE_STYLES = {
-  SD: 'border-amber-200 bg-amber-50 text-amber-900',
-  SMP: 'border-sky-200 bg-sky-50 text-sky-900',
-  SMA: 'border-emerald-200 bg-emerald-50 text-emerald-900',
-  SMK: 'border-slate-300 bg-slate-100 text-slate-800',
-};
-
 export default function AppCard({ project, onSelect }) {
-  const levelStyle =
-    LEVEL_BADGE_STYLES[project.level] || 'border-slate-200 bg-slate-100 text-slate-800';
-
   return (
     <article className="flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 transition-all hover:border-emerald-700/40 hover:shadow-md">
       <div>
@@ -19,16 +9,9 @@ export default function AppCard({ project, onSelect }) {
           <AppLogo src={project.logoUrl} appName={project.appName} sizeClass="h-16 w-16" />
 
           <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <span className="text-xs font-semibold text-slate-600">
-                {project.groupName}
-              </span>
-              <span
-                className={`inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-bold ${levelStyle}`}
-              >
-                {project.level}
-              </span>
-            </div>
+            <span className="text-xs font-semibold text-slate-600">
+              {project.groupName}
+            </span>
 
             <h3 className="mt-1 truncate text-lg font-bold text-slate-900">
               {project.appName}

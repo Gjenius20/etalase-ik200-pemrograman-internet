@@ -1,5 +1,3 @@
-import { Layers } from 'lucide-react';
-
 export default function Navbar({ totalProjects }) {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur-sm">
@@ -8,15 +6,20 @@ export default function Navbar({ totalProjects }) {
           href="#top"
           className="flex min-h-[44px] items-center gap-3 rounded-lg pr-2 text-slate-900 transition-colors hover:text-emerald-800"
         >
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#1E3A5F] text-white">
-            <Layers className="h-5 w-5" aria-hidden="true" />
-          </span>
+          <img
+            src="/images/Logo_Kelas.jpg"
+            alt="Logo Kelas IK200"
+            width={40}
+            height={40}
+            fetchPriority="high"
+            className="h-10 w-10 shrink-0 rounded-xl border border-slate-200 bg-white object-cover"
+          />
           <span className="flex flex-col leading-tight">
             <span className="text-sm font-bold tracking-tight sm:text-base">
-              Portal Karya IK200
+              Portal Karya CTRL-B
             </span>
             <span className="text-xs font-medium text-slate-600">
-              Pendidikan Ilmu Komputer, UPI
+              Pendidikan Ilmu Komputer 2025, UPI
             </span>
           </span>
         </a>

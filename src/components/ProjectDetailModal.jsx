@@ -110,14 +110,9 @@ export default function ProjectDetailModal({ project, onClose }) {
                 sizeClass="h-14 w-14 sm:h-16 sm:w-16"
               />
               <div className="min-w-0">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-bold text-slate-600">
-                    {project.groupName}
-                  </span>
-                  <span className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-bold text-emerald-900">
-                    Jenjang {project.level}
-                  </span>
-                </div>
+                <span className="text-xs font-bold text-slate-600">
+                  {project.groupName}
+                </span>
                 <h2
                   id="modal-app-title"
                   className="mt-0.5 truncate text-xl font-extrabold text-slate-900 sm:text-2xl"

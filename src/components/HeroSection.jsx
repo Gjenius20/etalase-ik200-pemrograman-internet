@@ -1,13 +1,48 @@
 import { Compass } from 'lucide-react';
 
+const INSTITUTION_LOGOS = [
+  {
+    src: '/images/UPI-Logo-FPMIPA.png',
+    alt: 'Logo FPMIPA Universitas Pendidikan Indonesia',
+  },
+  {
+    src: '/images/UPI-Logo-CSE.png',
+    alt: 'Logo Program Studi Pendidikan Ilmu Komputer UPI',
+  },
+  {
+    src: '/images/Logo-Tersier-Diktisaintek-Berdampak-Bulat.png',
+    alt: 'Logo Diktisaintek Berdampak',
+  },
+  {
+    src: '/images/Logo_Kelas.jpg',
+    alt: 'Logo Kelas IK200 Pemrograman Internet',
+    rounded: true,
+  },
+];
+
 export default function HeroSection() {
   return (
     <section id="top" className="border-b border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
+        <div className="mb-6 flex flex-wrap items-center gap-4 sm:gap-5">
+          {INSTITUTION_LOGOS.map((logo) => (
+            <img
+              key={logo.src}
+              src={logo.src}
+              alt={logo.alt}
+              height={48}
+              fetchPriority="high"
+              className={`h-10 w-auto object-contain sm:h-12 ${
+                logo.rounded ? 'rounded-xl border border-slate-200' : ''
+              }`}
+            />
+          ))}
+        </div>
+
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <p className="text-xs font-bold uppercase tracking-wider text-[#1E3A5F] sm:text-sm">
-              Tugas Besar Pengganti UAS · IK200 Pemrograman Internet | Program Studi Pendidikan Ilmu Komputer, FPMIPA UPI
+              Kelas CTRL-B · Pendidikan Ilmu Komputer 2025 · IK200 Pemrograman Internet, FPMIPA UPI
             </p>
             <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
               Portal Karya Media Pembelajaran Informatika, Koding &amp; Kecerdasan Artifisial
