@@ -36,7 +36,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900">
+    <div className="flex min-h-screen flex-col bg-[#F8F7F3] text-[#111920]">
       <Navbar totalProjects={projectsData.length} />
 
       <main className="flex-1">
@@ -88,7 +88,7 @@ export default function App() {
               <button
                 type="button"
                 onClick={handleResetSearch}
-                className="mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-[#01875F] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#016e4d]"
+                className="mt-5 inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-[#235334] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1a3f27]"
               >
                 <RotateCcw className="h-4 w-4" aria-hidden="true" />
                 Reset Pencarian

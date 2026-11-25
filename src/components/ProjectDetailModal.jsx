@@ -148,7 +148,7 @@ export default function ProjectDetailModal({ project, onClose }) {
                   href={project.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-[#01875F] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#016e4d] active:bg-[#01593f]"
+                  className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl bg-[#235334] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#1a3f27] active:bg-[#13301d]"
                 >
                   <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   Buka Website Aktif
@@ -165,9 +165,9 @@ export default function ProjectDetailModal({ project, onClose }) {
               </div>
 
               {project.members?.length > 0 && (
-                <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                <div className="mt-5 rounded-2xl border border-stone-200 bg-[#F8F7F3] p-4">
                   <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
-                    <Users className="h-4 w-4 text-[#1E3A5F]" aria-hidden="true" />
+                    <Users className="h-4 w-4 text-[#235334]" aria-hidden="true" />
                     Anggota {project.groupName}
                   </div>
                   <ul className="mt-2.5 flex flex-wrap gap-2">
@@ -259,7 +259,7 @@ export default function ProjectDetailModal({ project, onClose }) {
 
               <div>
                 <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-slate-800">
-                  <Target className="h-4 w-4 text-[#01875F]" aria-hidden="true" />
+                  <Target className="h-4 w-4 text-[#235334]" aria-hidden="true" />
                   Konteks &amp; Sasaran Pembelajaran
                 </h4>
                 <dl className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -288,7 +288,7 @@ export default function ProjectDetailModal({ project, onClose }) {
                     {(project.features || []).map((feat, idx) => (
                       <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
                         <CheckCircle2
-                          className="mt-0.5 h-4 w-4 shrink-0 text-[#01875F]"
+                          className="mt-0.5 h-4 w-4 shrink-0 text-[#235334]"
                           aria-hidden="true"
                         />
                         <span>{feat}</span>
@@ -297,8 +297,8 @@ export default function ProjectDetailModal({ project, onClose }) {
                   </ul>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-[#1E3A5F] p-4 text-white sm:p-5 lg:col-span-5">
-                  <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-emerald-300">
+                <div className="rounded-2xl border border-[#C5A24D]/40 bg-[#111920] p-4 text-white sm:p-5 lg:col-span-5">
+                  <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#E2C675]">
                     <Bot className="h-4 w-4" aria-hidden="true" />
                     Integrasi Kecerdasan Artifisial
                   </h4>
@@ -312,7 +312,7 @@ export default function ProjectDetailModal({ project, onClose }) {
             {/* 4. Video Demo Aplikasi (Artefak #2) */}
             <section aria-labelledby="section-video">
               <div className="flex items-center gap-2">
-                <PlayCircle className="h-5 w-5 text-[#01875F]" aria-hidden="true" />
+                <PlayCircle className="h-5 w-5 text-[#235334]" aria-hidden="true" />
                 <h3
                   id="section-video"
                   className="text-base font-bold text-slate-900 sm:text-lg"
@@ -352,18 +352,18 @@ export default function ProjectDetailModal({ project, onClose }) {
                       href={doc.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex min-h-[44px] flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-colors hover:border-[#01875F] hover:bg-emerald-50/40"
+                      className="flex min-h-[44px] flex-col justify-between rounded-2xl border border-stone-200 bg-[#F8F7F3] p-4 transition-colors hover:border-[#235334] hover:bg-[#EEF5F0]"
                     >
                       <div>
-                        <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-                          <Icon className="h-4 w-4 shrink-0 text-[#1E3A5F]" aria-hidden="true" />
+                        <div className="flex items-center gap-2 text-sm font-bold text-[#111920]">
+                          <Icon className="h-4 w-4 shrink-0 text-[#235334]" aria-hidden="true" />
                           <span>{doc.title}</span>
                         </div>
                         <p className="mt-1.5 text-xs leading-relaxed text-slate-600">
                           {doc.description}
                         </p>
                       </div>
-                      <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#01875F]">
+                      <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-[#235334]">
                         Buka / Unduh PDF
                         <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                       </span>

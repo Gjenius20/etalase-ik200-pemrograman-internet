@@ -21,7 +21,7 @@ export default function AppLogo({ src, appName, sizeClass = 'h-16 w-16', textCla
       <div
         role="img"
         aria-label={`Logo ${appName}`}
-        className={`${sizeClass} flex shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-[#1E3A5F] font-extrabold text-white select-none ${textClass}`}
+        className={`${sizeClass} flex shrink-0 items-center justify-center rounded-2xl border border-[#C5A24D]/60 bg-[#235334] font-extrabold text-white select-none ${textClass}`}
       >
         {initials || 'IK'}
       </div>
@@ -36,7 +36,7 @@ export default function AppLogo({ src, appName, sizeClass = 'h-16 w-16', textCla
       height={80}
       loading="lazy"
       onError={() => setHasError(true)}
-      className={`${sizeClass} shrink-0 rounded-2xl border border-slate-200 bg-slate-100 object-cover`}
+      className={`${sizeClass} shrink-0 rounded-2xl border border-stone-200 bg-stone-100 object-cover`}
     />
   );
 }
