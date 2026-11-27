@@ -1,0 +1,12 @@
+{
+  "reason": "Temuan sudah di-triage di progress.md bagian 'Audit Dependensi'. Semua butuh major upgrade. Tinjau ulang 2026-12-27.",
+  "allowed": {
+    "@prisma/config": "high",
+    "deepmerge-ts": "high",
+    "effect": "high",
+    "next": "moderate",
+    "postcss": "high",
+    "prisma": "high",
+    "zod": "high"
+  }
+}

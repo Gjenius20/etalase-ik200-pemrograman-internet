@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens Etalase IK200.
+ * Nilai hex diambil langsung dari desain Vite agar tampilan tetap identik.
+ */
+@theme {
+  --color-brand: #235334;
+  --color-brand-dark: #1a3f27;
+  --color-brand-darker: #13301d;
+  --color-brand-soft: #eef5f0;
+  --color-gold: #c5a24d;
+  --color-gold-light: #e2c675;
+  --color-gold-dark: #b59442;
+  --color-cream: #f8f7f3;
+  --color-ink: #111920;
+
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+  }
+
+  button:not(:disabled),
+  a[href],
+  summary,
+  select:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  select:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

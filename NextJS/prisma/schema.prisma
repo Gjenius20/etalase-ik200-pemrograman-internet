@@ -1,0 +1,75 @@
+// Prisma schema — Etalase Karya IK200
+// Dokumentasi lengkap: lihat PRD.md bagian 6.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  // Pooled connection for application traffic (Neon -pooler host).
+  url       = env("DATABASE_URL")
+  // Direct connection for schema migrations (no PgBouncer session limits).
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+enum ProjectStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model Project {
+  id               String        @id @default(cuid())
+  slug             String        @unique
+  groupNumber      Int           @unique
+  appName          String
+  shortDescription String
+  fullDescription  String
+  targetUser       String
+  targetCompetency String
+  learningProblem  String
+  learningSuccess  String
+
+  features      String[]
+  aiIntegration String?
+
+  websiteUrl String
+  githubUrl  String
+  youtubeId  String
+
+  logoUrl String
+  logoKey String?
+
+  screenshots Json
+  documents   Json
+
+  status ProjectStatus @default(DRAFT)
+
+  members Member[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+}
+
+/// Rate limit login yang dibagi antar instance (Vercel serverless).
+/// Kuncinya adalah IP yang dikirim loginAction.
+model LoginAttempt {
+  key       String   @id
+  count     Int      @default(0)
+  windowEnd DateTime
+  updatedAt DateTime @updatedAt
+}
+
+model Member {
+  id        String  @id @default(cuid())
+  name      String
+  nim       String
+  order     Int
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([projectId, nim])
+  @@index([projectId])
+}
